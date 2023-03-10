@@ -16,15 +16,17 @@ def speak(str):
     engine.runAndWait()
     pass
 
-path ='FaceRecognizationUsingPython/FaceRecog.py/face_images'
-path1 ='FaceRecognizationUsingPython/FaceRecog.py/cam_images'
+path ='FaceRecognizationUsingPython\\face_images'
+path1 ='FaceRecognizationUsingPython\\cam_images'
+
+#donot forget to change the path accordingly
 
 
 def loadimg(path):
     imgset=listdir(path)
     imglist=[]
     for i in imgset:
-        imglist.append(path+'/'+i)
+        imglist.append(path+'\\'+i)
     
     return imglist
 
@@ -35,17 +37,17 @@ cam=VideoCapture(cport)
 
 result,camImage=cam.read()
 if result:
-    imwrite(path1+'/'+"hi.jpg",camImage)
+    imwrite(path1+'\\'+"hi.jpg",camImage)
 else:
     print("again you bot")
     
-camimg=face_recognition.load_image_file(path1+"/"+"hi.jpg")
+camimg=face_recognition.load_image_file(path1+"\\"+"hi.jpg")
     
 for i in imgs:
         
     dataimg=face_recognition.load_image_file(i)
     l=i
-    k=l.split("/")
+    k=l.split("\\")
     f=k[len(k)-1]
     name=f
     try:
